@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+      xmlns:ar="nativescript-ar"
+      navigatingTo="onNavigatingTo">
+    <ActionBar title="3D Animals AR" />
+    <GridLayout rows="*, auto">
+        <ar:AR id="arView" row="0" 
+                   detectPlanes="true"
+                   planeDetection="horizontal"
+                   showStatistics="false"
+                   arLoaded="arLoaded"
+                   planeTapped="planeTapped" />
+        <StackLayout row="1" class="p-4 bg-white">
+            <Label text="{{ statusMessage }}" class="text-lg text-center mb-2" textWrap="true" />
+            <WrapLayout horizontalAlignment="center" class="mb-4">
+                <Button text="🦁 Lion" tap="{{ placeLion }}" class="m-1 btn-primary" />
+                <Button text="🐘 Elephant" tap="{{ placeElephant }}" class="m-1 btn-primary" />
+                <Button text="🦒 Giraffe" tap="{{ placeGiraffe }}" class="m-1 btn-primary" />
+            </WrapLayout>
+        </StackLayout>
+    </GridLayout>
+</Page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Animal Explorer" />
+    <GridLayout rows="*, auto">
+        <Camera id="camera" row="0" />
+        <StackLayout row="1" class="p-4 bg-white">
+            <Label text="{{ statusMessage }}" class="text-lg text-center mb-2" />
+            <WrapLayout horizontalAlignment="center" class="mb-4">
+                <Button text="🦁 Lion" tap="{{ showLion }}" class="m-1 btn-primary" />
+                <Button text="🐘 Elephant" tap="{{ showElephant }}" class="m-1 btn-primary" />
+                <Button text="🦒 Giraffe" tap="{{ showGiraffe }}" class="m-1 btn-primary" />
+            </WrapLayout>
+            <Image src="{{ currentAnimalImage }}" class="h-32" visibility="{{ currentAnimalImage ? 'visible' : 'collapsed' }}" />
+        </StackLayout>
+    </GridLayout>
+</Page>
